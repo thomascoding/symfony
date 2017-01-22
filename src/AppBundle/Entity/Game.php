@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Game
 {
+    const PUBLISHED_STATUS = 'published';
     /**
      * @var string
      *
@@ -252,6 +253,8 @@ class Game
     /**
      * Many Games have Many Tags.
      * @ORM\ManyToMany(targetEntity="GameTags")
+     * Не стал разгребать, но тут что-то не так. Если явно есть сущность, отношение не мениТу мени, а 2 отношения по ванТуМени.
+     * Мени ту мени применяется, когда таблица мост есть, но самой сущности на этот мост у доктрины нет
      * @ORM\JoinTable(name="game_tags_forgame",
      *      joinColumns={@ORM\JoinColumn(name="idgame", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="idgame", referencedColumnName="id")}
@@ -764,7 +767,7 @@ class Game
     /**
      * Get tags
      *
-     * @return array
+     * @return GameTags[]
      */
     public function getTags()
     {
