@@ -1,0 +1,10 @@
+services:
+
+    app.repository.game_repository:
+        class: AppBundle\Repository\GameRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments: [AppBundle\Entity\Game]
+
+    app.service.game_converter_service:
+        class: AppBundle\Service\GameConverterService
+        arguments: ["@router", "%%swf.path%%"]

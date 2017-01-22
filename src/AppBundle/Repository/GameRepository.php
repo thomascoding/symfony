@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Game;
+use AppBundle\Request\GameRequest;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -14,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class GameRepository extends EntityRepository
 {
+
   public function findAll()
   {
     $results = $this->getEntityManager()
@@ -25,6 +27,33 @@ class GameRepository extends EntityRepository
     return $results;
   }
 
+    public function findAllWithTagsByRequest(GameRequest $request)
+    {
+        $query = $this->createQueryByRequest($request);
+        $query->innerJoin('game.tags', 'tags');
 
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * @param GameRequest $request
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    private function createQueryByRequest(GameRequest $request)
+    {
+        $qb = $this->createQueryBuilder('game');
+
+        if ($request->getName()) {
+            $qb->andWhere('game.name LIKE :name')
+                ->setParameter('name', '%' . $request->getName() . '%');
+        }
+
+        if ($request->getPublished()) {
+            $qb->andWhere('game.status = :published')
+                ->setParameter('published', Game::PUBLISHED_STATUS);
+        }
+
+        return $qb;
+    }
 
 }
