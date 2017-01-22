@@ -1,0 +1,130 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GameTags
+ *
+ * @ORM\Table(name="game_tags", indexes={@ORM\Index(name="slug", columns={"slug"}), @ORM\Index(name="rd_slug", columns={"rd_slug"}), @ORM\Index(name="status", columns={"status"})})
+ * @ORM\Entity
+ */
+class GameTags
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="text", length=65535, nullable=false)
+     */
+    private $tag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kol", type="text", length=65535, nullable=false)
+     */
+    private $kol;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", length=65535, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="h1", type="text", length=65535, nullable=false)
+     */
+    private $h1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=32, nullable=false)
+     */
+    private $slug;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descr_old", type="text", length=16777215, nullable=false)
+     */
+    private $descrOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="up_txt_old", type="text", length=16777215, nullable=false)
+     */
+    private $upTxtOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_old", type="text", length=255, nullable=false)
+     */
+    private $imgOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seo_descr", type="text", length=65535, nullable=false)
+     */
+    private $seoDescr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seo_keywords", type="text", length=65535, nullable=false)
+     */
+    private $seoKeywords;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rd_slug", type="string", length=100, nullable=false)
+     */
+    private $rdSlug;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descr", type="text", length=16777215, nullable=false)
+     */
+    private $descr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="up_txt", type="text", length=16777215, nullable=false)
+     */
+    private $upTxt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="text", length=255, nullable=false)
+     */
+    private $img;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

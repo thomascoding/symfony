@@ -1,0 +1,20 @@
+lucky:
+    path:      /lucky/
+    defaults:  { _controller: AppBundle:Lucky:number }
+
+app:
+    path:      /
+    defaults:  { _controller: AppBundle:Default:index }
+
+api:
+    path:      /api/main/index/
+    defaults:  { _controller: AppBundle:API:mainIndex }
+
+game:
+    path:      /game/{id}
+    defaults:  { _controller: AppBundle:Game:show }
+
+tag:
+    path:      /{slug}/
+    defaults:  { _controller: AppBundle:Tag:show }
+

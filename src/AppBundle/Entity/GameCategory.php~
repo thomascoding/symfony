@@ -1,0 +1,165 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GameCategory
+ *
+ * @ORM\Table(name="game_category", indexes={@ORM\Index(name="sort", columns={"sort"}), @ORM\Index(name="status", columns={"status"})})
+ * @ORM\Entity
+ */
+class GameCategory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sort", type="integer", nullable=false)
+     */
+    private $sort;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sort_rec", type="integer", nullable=false)
+     */
+    private $sortRec;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bond", type="integer", nullable=false)
+     */
+    private $bond;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="text", length=65535, nullable=false)
+     */
+    private $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="text", length=65535, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="h1", type="text", length=65535, nullable=false)
+     */
+    private $h1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="folder", type="string", length=255, nullable=false)
+     */
+    private $folder;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dt", type="datetime", nullable=false)
+     */
+    private $dt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="down_txt_old", type="text", length=16777215, nullable=false)
+     */
+    private $downTxtOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="up_txt_old", type="text", length=16777215, nullable=false)
+     */
+    private $upTxtOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_old", type="text", length=255, nullable=false)
+     */
+    private $imgOld;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tags", type="text", length=65535, nullable=false)
+     */
+    private $tags;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numgames", type="text", length=65535, nullable=false)
+     */
+    private $numgames;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="numdt", type="datetime", nullable=false)
+     */
+    private $numdt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seo_descr", type="text", length=65535, nullable=false)
+     */
+    private $seoDescr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seo_keywords", type="text", length=65535, nullable=false)
+     */
+    private $seoKeywords;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="up_txt", type="text", length=16777215, nullable=false)
+     */
+    private $upTxt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="down_txt", type="text", length=16777215, nullable=false)
+     */
+    private $downTxt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="text", length=255, nullable=false)
+     */
+    private $img;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

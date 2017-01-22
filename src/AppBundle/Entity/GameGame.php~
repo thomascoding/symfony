@@ -1,0 +1,256 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GameGame
+ *
+ * @ORM\Table(name="game_game", indexes={@ORM\Index(name="in_rec", columns={"recomend"}), @ORM\Index(name="in_name", columns={"name"}), @ORM\Index(name="in_min_name", columns={"min_name"}), @ORM\Index(name="in_dual", columns={"for_dual"}), @ORM\Index(name="in_view", columns={"view"}), @ORM\Index(name="in_name_link", columns={"name_link"}), @ORM\Index(name="category", columns={"category"}), @ORM\Index(name="topx", columns={"topx"}), @ORM\Index(name="dt", columns={"dt", "category"}), @ORM\Index(name="site_rating", columns={"site_rating"}), @ORM\Index(name="dt_2", columns={"dt"}), @ORM\Index(name="deleted", columns={"deleted"}), @ORM\Index(name="dup_id", columns={"dup_id"}), @ORM\Index(name="pdt", columns={"pdt"}), @ORM\Index(name="status", columns={"status"})})
+ * @ORM\Entity
+ */
+class GameGame
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="min_name", type="text", length=255, nullable=true)
+     */
+    private $minName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", length=65535, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name2", type="string", length=255, nullable=true)
+     */
+    private $name2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name_link", type="string", length=255, nullable=true)
+     */
+    private $nameLink;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text", length=16777215, nullable=false)
+     */
+    private $text;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=255, nullable=true)
+     */
+    private $category;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="view", type="integer", nullable=false)
+     */
+    private $view;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="top1", type="integer", nullable=false)
+     */
+    private $top1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="top2", type="integer", nullable=false)
+     */
+    private $top2;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="top3", type="integer", nullable=false)
+     */
+    private $top3;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="top4", type="integer", nullable=false)
+     */
+    private $top4;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="topx", type="integer", nullable=false)
+     */
+    private $topx;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rating", type="integer", nullable=false)
+     */
+    private $rating;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rating_col", type="integer", nullable=false)
+     */
+    private $ratingCol;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="recomend", type="integer", nullable=false)
+     */
+    private $recomend;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dt", type="datetime", nullable=false)
+     */
+    private $dt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="pdt", type="datetime", nullable=false)
+     */
+    private $pdt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="w", type="integer", nullable=false)
+     */
+    private $w;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="h", type="integer", nullable=false)
+     */
+    private $h;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="for_dual", type="integer", nullable=false)
+     */
+    private $forDual;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="metka", type="string", length=255, nullable=true)
+     */
+    private $metka;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tags", type="string", length=255, nullable=true)
+     */
+    private $tags;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="version", type="integer", nullable=false)
+     */
+    private $version;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="site_rating", type="integer", nullable=false)
+     */
+    private $siteRating;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="swf_url", type="text", length=65535, nullable=false)
+     */
+    private $swfUrl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="no_ads", type="integer", nullable=false)
+     */
+    private $noAds;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dup_id", type="integer", nullable=false)
+     */
+    private $dupId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="deleted", type="integer", nullable=false)
+     */
+    private $deleted;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="view_lang", type="integer", nullable=false)
+     */
+    private $viewLang;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="swf_data", type="text", length=65535, nullable=false)
+     */
+    private $swfData;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="swf_type", type="text", length=65535, nullable=false)
+     */
+    private $swfType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="swf_vars", type="text", length=65535, nullable=false)
+     */
+    private $swfVars;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

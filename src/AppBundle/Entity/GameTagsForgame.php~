@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GameTagsForgame
+ *
+ * @ORM\Table(name="game_tags_forgame", indexes={@ORM\Index(name="idgame", columns={"idgame"}), @ORM\Index(name="idtag", columns={"idtag"}), @ORM\Index(name="category", columns={"category"}), @ORM\Index(name="idgame_2", columns={"idgame", "idtag"})})
+ * @ORM\Entity
+ */
+class GameTagsForgame
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idgame", type="integer", nullable=false)
+     */
+    private $idgame;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idtag", type="integer", nullable=false)
+     */
+    private $idtag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nametag", type="string", length=50, nullable=false)
+     */
+    private $nametag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=50, nullable=false)
+     */
+    private $category;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

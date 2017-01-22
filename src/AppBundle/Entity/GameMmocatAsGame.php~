@@ -1,0 +1,39 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GameMmocatAsGame
+ *
+ * @ORM\Table(name="game_mmocat_as_game", indexes={@ORM\Index(name="cat", columns={"cat"}), @ORM\Index(name="id_game", columns={"id_game"})})
+ * @ORM\Entity
+ */
+class GameMmocatAsGame
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cat", type="integer", nullable=true)
+     */
+    private $cat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_game", type="integer", nullable=true)
+     */
+    private $idGame;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
